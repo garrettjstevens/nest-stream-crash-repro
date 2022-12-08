@@ -21,6 +21,7 @@ export class AppService {
           // App only crashes if the error is not in the first chunk
           if (chunkCount > 0) {
             callback(new Error('synthetic error'));
+            return;
           }
           chunkCount += 1;
           callback(null, chunk.toString());
